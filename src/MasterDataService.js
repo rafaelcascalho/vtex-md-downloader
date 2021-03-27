@@ -4,11 +4,9 @@ const SCROLL_SIZE = 1000
 
 // TODO: impl persistence for the cli
 class MasterDataService {
-    constructor({ account, entity, appKey, appToken }) {
+    constructor({ account, entity }) {
         this.url = `https://${account}.myvtex.com/`
         this.entity = entity
-        this.appKey = appKey
-        this.appToken = appToken
         this.headers = this.genHeaders()
     }
 
@@ -23,7 +21,7 @@ class MasterDataService {
      * TODO: impl
      * 1. The loop over the total number of documents
      * 2. The promises list so it can make multiple requests concurrently
-     * 3. The parser for the fields option 
+     * 3. The parser for the fields options
      * */
     download = async(fields = null) => {
         const scrollBaseUrl = `api/dataentities/${this.entity}/scroll`

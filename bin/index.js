@@ -1,25 +1,27 @@
 #!/usr/bin/env node
 
-const yargs = require('yars')
+const yargs = require('yargs')
 const MasterDataService = require('../src/MasterDataService')
 
-const configFileOption = {
+const accountOption = {
     type: 'string',
-    alias: 'config', 
+    alias: 'account-name',
     demandOption: true,
-    describe: 'Config file name ( default is .mdconfig ), which should be placed at the project root',
+    describe: 'The VTEX account name'
 }
-const generateConfigFileOption = {
+const entityOption = {
     type: 'string',
-    alias: 'generate-config-file',
-    demandOption: false,
-    describe: 'Generate config file sample'
+    alias: 'entity',
+    demandOption: true,
+    describe: 'The dataentity reference, eg.: CL'
 }
 
 const options = yargs
     .usage('Usage: mdd [OPTIONS]...')
-    .option('-c', configFileOption)
-    .option('-g', generateConfigFileOption)
+    .option('a', accountOption)
+    .option('e', entityOption)
     .argv;
+
+console.table(options)
 
 // TODO: impl service logic use here
