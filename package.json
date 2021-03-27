@@ -1,0 +1,33 @@
+{
+  "name": "vtex-md-downloader",
+  "version": "1.0.0",
+  "description": "This is an app and cli that enables you to download all documents from a single entity from VTEX MasterData. Main focus are on back end integrations, and current documents validation.",
+  "main": "bin/index.js",
+  "bin": {
+    "mdd": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafaelcascalho/vtex-md-downloader.git"
+  },
+  "keywords": [
+    "vtex",
+    "master-data",
+    "md",
+    "downloader",
+    "cli"
+  ],
+  "author": "Rafael Cascalho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafaelcascalho/vtex-md-downloader/issues"
+  },
+  "homepage": "https://github.com/rafaelcascalho/vtex-md-downloader#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "yargs": "^16.2.0"
+  }
+}
